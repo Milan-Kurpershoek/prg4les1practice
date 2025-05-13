@@ -2,6 +2,9 @@ import '../css/style.css'
 import { Actor, Engine, Vector, DisplayMode } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
 import { Fish } from './fish.js'
+import { Shark } from './shark.js'
+import { Bubbles } from './bubbles.js'
+import { Background } from './background.js'
 
 export class Game extends Engine {
 
@@ -25,28 +28,43 @@ export class Game extends Engine {
             // fish.vel = new Vector(Math.random() * 200 - 100, Math.random() * 200 - 100)
             // fish.events.on("exitviewport", (e) => this.fishLeft(e))
             this.add(fish)
-
-            // const fishTwo = new Actor()
-            // fishTwo.graphics.use(Resources.fishTwo.toSprite())
-            // fishTwo.pos = new Vector(Math.random() * 1280, Math.random() * 720)
-            // fishTwo.vel = new Vector(Math.random() * 200 - 100, Math.random() * 200 - 100)
-            // fishTwo.events.on("exitviewport", (e) => this.fishLeft(e))
-            // this.add(fishTwo)
-
-            // const fishThree = new Actor()
-            // fishThree.graphics.use(Resources.fishThree.toSprite())
-            // fishThree.pos = new Vector(Math.random() * 1280, Math.random() * 720)
-            // fishThree.vel = new Vector(Math.random() * 200 - 100, Math.random() * 200 - 100)
-
-
-            // fish.scale = new Vector(0.5, 0.5)
-            // if (fishThree.vel.x < 0) {
-            //     fishThree.graphics.flipHorizontal = true
-            // }
-
-            // fishThree.events.on("exitviewport", (e) => this.fishLeft(e))
-            // this.add(fishThree)
         }
+
+        const shark = new Shark()
+        this.add(shark)
+
+        for (let i = 0; i < 20; i++) {
+
+            const bubbles = new Bubbles()
+            this.add(bubbles)
+        }
+
+        const background = new Background()
+        this.add(background)
+
+
+
+        // const fishTwo = new Actor()
+        // fishTwo.graphics.use(Resources.fishTwo.toSprite())
+        // fishTwo.pos = new Vector(Math.random() * 1280, Math.random() * 720)
+        // fishTwo.vel = new Vector(Math.random() * 200 - 100, Math.random() * 200 - 100)
+        // fishTwo.events.on("exitviewport", (e) => this.fishLeft(e))
+        // this.add(fishTwo)
+
+        // const fishThree = new Actor()
+        // fishThree.graphics.use(Resources.fishThree.toSprite())
+        // fishThree.pos = new Vector(Math.random() * 1280, Math.random() * 720)
+        // fishThree.vel = new Vector(Math.random() * 200 - 100, Math.random() * 200 - 100)
+
+
+        // fish.scale = new Vector(0.5, 0.5)
+        // if (fishThree.vel.x < 0) {
+        //     fishThree.graphics.flipHorizontal = true
+        // }
+
+        // fishThree.events.on("exitviewport", (e) => this.fishLeft(e))
+        // this.add(fishThree)
+
         // fish.events.on("exitviewport", (e) => this.fishLeft(e))
 
     }

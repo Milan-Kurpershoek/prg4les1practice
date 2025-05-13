@@ -5,9 +5,10 @@ export class Fish extends Actor {
     onInitialize() {
         this.graphics.use(Resources.Fish.toSprite());
 
+        this.events.on("exitviewport", (e) => this.FishToRandomPosition(e));
         this.FishToRandomPosition();
 
-        this.events.on("exitviewport", (e) => this.FishToRandomPosition(e));
+
     }
 
     FishToRandomPosition(e) {
