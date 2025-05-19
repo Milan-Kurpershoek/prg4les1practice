@@ -12,10 +12,18 @@ export class Shark extends Actor {
         this.SharkPositionReset();
 
         this.scale = new Vector(0.5, 0.5)
+
+        this.on('collisionstart', (event) => this.hitSomething(event))
     }
 
     SharkPositionReset(e) {
         this.pos = new Vector(100, 350);
         this.vel = new Vector(50, 0);
+    }
+
+    hitSomething(event) {
+        if (event.other.owner instanceof Fish) {
+            event.other.owner.kill()
+        }
     }
 }

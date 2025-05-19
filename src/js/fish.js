@@ -8,6 +8,7 @@ export class Fish extends Actor {
         this.events.on("exitviewport", (e) => this.FishToRandomPosition(e));
         this.FishToRandomPosition();
 
+        this.scale = new Vector(0.3, 0.3)
 
     }
 

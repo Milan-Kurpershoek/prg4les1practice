@@ -5,6 +5,7 @@ import { Fish } from './fish.js'
 import { Shark } from './shark.js'
 import { Bubbles } from './bubbles.js'
 import { Background } from './background.js'
+import { Jellyfish } from './jellyfish.js'
 
 export class Game extends Engine {
 
@@ -20,7 +21,7 @@ export class Game extends Engine {
 
     startGame() {
         console.log("start de game!")
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 20; i++) {
 
             const fish = new Fish()
             // fish.graphics.use(Resources.Fish.toSprite())
@@ -42,6 +43,8 @@ export class Game extends Engine {
         const background = new Background()
         this.add(background)
 
+        const jellyfish = new Jellyfish()
+        this.add(jellyfish)
 
 
         // const fishTwo = new Actor()
